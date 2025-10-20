@@ -17,7 +17,7 @@ function DeleteTeacher() {
 
     const clickHandler = (e) => {
         e.preventDefault();
-        fetch('http://localhost:4000/api/Teachers/DeleteTeachers', {
+        fetch('https://student-portal-system-wvyc.onrender.com/api/Teachers/DeleteTeachers', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -18,7 +18,7 @@ function UpdateAcadamicCalande() {
 
     const clickHandler = (e) => {
         e.preventDefault();
-        fetch('http://localhost:4000/api/AcadamicPeriod/InsertAcadamicPeiod', {
+        fetch('https://student-portal-system-wvyc.onrender.com/api/AcadamicPeriod/InsertAcadamicPeiod', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

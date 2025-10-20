@@ -29,7 +29,7 @@ function AddNewStudent() {
 
     const clickHandler = (e) => {
         e.preventDefault();
-        fetch('http://localhost:4000/api/Students/InsertStudent', {
+        fetch('https://student-portal-system-wvyc.onrender.com/api/Students/InsertStudent', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

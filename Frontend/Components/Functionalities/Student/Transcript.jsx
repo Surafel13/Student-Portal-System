@@ -8,7 +8,7 @@ function Transcript() {
     const [data, setData] = useState({});
 
     useEffect(() => {
-        fetch('http://localhost:4000/api/Grade/SelectStudentGrade', {
+        fetch('https://student-portal-system-wvyc.onrender.com/api/Grade/SelectStudentGrade', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

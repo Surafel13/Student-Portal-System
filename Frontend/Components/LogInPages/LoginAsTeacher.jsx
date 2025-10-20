@@ -24,7 +24,7 @@ function LoginAsTeacher() {
     const clickHandler = (e) => {
         console.log(formData);
         e.preventDefault();
-        fetch('http://localhost:4000/api/Teachers/SelectTeachers', {
+        fetch('https://student-portal-system-wvyc.onrender.com/api/Teachers/SelectTeachers', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

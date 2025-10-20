@@ -25,7 +25,7 @@ function SearchTeachers() {
     const clickHandler = (e) => {
         console.log(formData);
         e.preventDefault();
-        fetch('http://localhost:4000/api/Teachers/SelectTeachers2', {
+        fetch('https://student-portal-system-wvyc.onrender.com/api/Teachers/SelectTeachers2', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -21,7 +21,7 @@ function AddNewTeacher() {
 
     const clickHandler = (e) => {
         e.preventDefault();
-        fetch('http://localhost:4000/api/Teachers/AddTeachers', {
+        fetch('https://student-portal-system-wvyc.onrender.com/api/Teachers/AddTeachers', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

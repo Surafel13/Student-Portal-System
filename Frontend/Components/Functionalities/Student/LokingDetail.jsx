@@ -8,7 +8,7 @@ function LokingDetail() {
   const [department, setDepartment] = useState({});
 
   useEffect(() => {
-    fetch('http://localhost:4000/api/Department/SelectDepartment', {
+    fetch('https://student-portal-system-wvyc.onrender.com/api/Department/SelectDepartment', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

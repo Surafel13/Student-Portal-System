@@ -23,7 +23,7 @@ function SearchStudent() {
 
     const clickHandler = (e) => {
         e.preventDefault();
-        fetch('http://localhost:4000/api/Students/SlelectStudent2', {
+        fetch('https://student-portal-system-wvyc.onrender.com/api/Students/SlelectStudent2', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

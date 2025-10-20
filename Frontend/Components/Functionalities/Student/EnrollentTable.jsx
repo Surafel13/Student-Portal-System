@@ -7,7 +7,7 @@ function EnrollentTable() {
   const [data, setData] = useState({});
 
   useEffect(() => {
-    fetch('http://localhost:4000/api/Enrollment/SelectEnrollment', {
+    fetch('https://student-portal-system-wvyc.onrender.com/api/Enrollment/SelectEnrollment', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -21,7 +21,7 @@ function InsertStudentMark() {
 
     const clickHandler = (e) => {
         e.preventDefault();
-        fetch('http://localhost:4000/api/Enrollment/InsertEnrollment', {
+        fetch('https://student-portal-system-wvyc.onrender.com/api/Enrollment/InsertEnrollment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
