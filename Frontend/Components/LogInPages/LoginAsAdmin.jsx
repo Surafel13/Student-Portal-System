@@ -1,10 +1,12 @@
 import React, { useState, useContext } from 'react'
 import { useNavigate } from 'react-router';
 import { UserContext } from './UserContext';
+import Spinner from 'react-bootstrap/Spinner';
 
 function LoginAsAdmin() {
 
-    const {user, setUser} = useContext(UserContext);
+    const { user, setUser } = useContext(UserContext);
+    const [loading, setLoading] = useState(false);
 
     const [formData, setFormData] = useState({
         AdminId: '',
@@ -19,11 +21,14 @@ function LoginAsAdmin() {
         }));
     };
 
+
+
     const navigate = useNavigate();
 
     const clickHandler = (e) => {
         e.preventDefault();
-        fetch('https://student-portal-system-wvyc.onrender.com/api/Admins/SelectAdmin', {
+        setLoading(true);
+        fetch('http://localhost:4000/api/Admins/SelectAdmin', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -33,10 +38,14 @@ function LoginAsAdmin() {
             .then((res) => res.json())
             .then((data) => {
                 if (data.message === "Admin not found.") {
+                    setLoading(false);
                     alert("Your are not found. Please check again your ID and Password")
-                } else if (data.message === "Unable to find the Admin.")
+                } else if (data.message === "Unable to find the Admin.") {
+                    setLoading(false);
                     alert("Something went wrong. Please Try again later.")
+                }
                 else {
+                    setLoading(false);
                     setUser(data);
                     navigate('/AdminPage')
                 }
@@ -52,9 +61,12 @@ function LoginAsAdmin() {
                 <form onSubmit={clickHandler}>
                     <input type="text" placeholder='Enter ID' name='AdminId' value={formData.AdminId} onChange={handleChange} /> <br />
                     <input type="password" placeholder='Enter Password' name='Password' value={formData.Password} onChange={handleChange} /><br />
-                    <button type='submit' className='Submit-Button' >
-                        Submit
+                    {loading ? <button type='button' className='Submit-Button' >
+                        <Spinner animation="border" variant="primary" />
                     </button>
+                    :<button type='submit' className='Submit-Button' >
+                        Submit
+                    </button>}
                 </form>
             </div>
         </div>
